@@ -7,16 +7,12 @@ function* hoursGenerator(i){
         i++;}
 }
 
-export const hoursIterator = hoursGenerator(getTime.hours);
-
 function* minutesGenerator(i){
     while (1){
         i = i % 60;
         yield i;
         i++;}
 }
-
-export const minutesIterator = minutesGenerator(getTime.minutes);
 
 function* secondsGenerator(i){
     while (1){
@@ -25,4 +21,6 @@ function* secondsGenerator(i){
         i++;}
 }
 
+export const hoursIterator = hoursGenerator(getTime.hours);
+export const minutesIterator = minutesGenerator(getTime.minutes);
 export const secondsIterator = secondsGenerator(getTime.seconds);
